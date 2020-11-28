@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Bjarne Mathiesen ; (+45) 253 60 179 ; bjarne@mathiesen.info</title>
+
+<style>
+
+html { background-color: #ccc ;}
+
+body {
+    margin-left: auto ; margin-right: auto ;
+    padding: 4em ;
+    width: 52em ;
+    background-color: #fff ;
+    font-size: 1em ;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5em ;
+    margin: 0em ; padding: 0em ;
+}
+
+h1 , h2 { font-family: Arial , Sans-Serif ; }
+
+.persdata , .persnavn {float: left;}
+.persdata dt {float: left;}
+.persdata dd {margin-left: 6em;}
+
+.tid dt {float: left; width: 4em;}
+.tid dd {margin-left: 8.5em;}
+.tid dt + dt::before {content: "- ";}
+
+p + ul , p + p {margin-top: -0.75em;}
+
+div.kompetence {
+    width: 50% ;
+    float: left ;
+}
+
+.komp::before { content: "Opnåede resultater: "; font-weight: bold; }
+.komp ul { margin: 0em 0em 0em 1em; padding: 0em; }
+
+@media print {
+
+body {
+    margin: 0em ;
+    border: 0em ;
+    padding: 0em ;
+}
+
+} /* @media print */
+
+
+</style>
+
+</head>
+<body>
+
+<h1>CV</h1>
+
+
+<dl class="persnavn" style="width: 30%">
+<dt>Bjarne Mathiesen</dt>
+<dt>Mathiesensvej 13, 1.</dt>
+<dt>4220  Korsør</dt>
+</dl>
+
+<dl class="persdata" style="width: 30%">
+<dt>FødselsDato:</dt><dd>5. marts 1960</dd>
+<dt>Mobil:</dt><dd>(+45) 253 60 179</dd>
+<dt>Email:</dt><dd>bjarne@mathiesen.info</dd>
+</dl>
+
+<img style="display: block ; float: right ; margin: 0.5em 0em 1em 1em ;" id="portrait" alt="IMG_5294" src="/graphics/IMG_5294.jpg" width="231" height="346">
+
+<h2>Resumé</h2>
+<p>
+Jeg er meget teknisk og konkret anlagt.
+I min hidtidige erhvervskarriere har jeg i meget høj grad været vant til selv at skulle strukturere min arbejdsdag.
+Jeg er omstillingsparat og har nemt ved at sætte mig ind i nye situationer og teknikker.
+Jeg trives med udfordringer;
+og sætter en ære i altid at gøre et godt og professionelt stykke arbejde.
+</p>
+<p>
+Ved siden af mit øvrige erhvervsarbejde har jeg arbejdet som Honorarlønnet WebUdvikler med opsætning af web- & email-servere samt udvikling af hjemmesider for SMBer.
+Jeg har der løbende erhvervet erfaring med LAMP-stakken; Apache; PHP; MySQL; HTML5; JSON; XML; XSLT; CSS; JavaScript; XPATH; opsætning af CMS; SEO; Ajax; IMAP; POP3; Postfix; Dovecot; letsencrypt (https).
+</p>
+<p>
+Mht programmeringssprog har jeg kendskab til : PHP; Java; C#; F#; R; C; C++; Python; Matlab.
+</p>
+
+<h2 style="clear: both;">Uddannelse</h2>
+
+<dl class="tid">
+
+<dt class="when">09/2018</dt><dt>11/2020</dt>
+<dd class="what">ZBC Ringsted - Hovedforløb Datatekniker ; Programmering</dd>
+
+<dt class="when">08/2018</dt>
+<dd class="what">ZBC Ringsted - Grundforløb Datatekniker (merit) ; Programmering</dd>
+
+<dt class="when">06/2002</dt><dt>nu</dt>
+<dd class="what">DTU - CivilIngeniør & Åben Uddannelse ; Informatik</dd>
+
+<dt class="when">1996</dt><dt>nu</dt>
+<dd class="what">selvstuderende</dd>
+<dd class="desc">IT & Web-teknologier</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">selvstuderet stort set alt indenfor Web-teknologier: html, xml, css, php, mysql, xpath, opsætning af linux servere. Mit erfaringsområde er indenfor den traditionelle LAMP stak; samt Mac OS X på sysadmin niveau.</dd>
+
+<dt class="when">09/1976</dt><dt>06/1979</dt>
+<dd class="what">Matematisk Studentereksamen</dd>
+
+<dt class="when">08/1966</dt><dt>06/1976</dt>
+<dd class="what">Realeksamen</dd>
+
+</dl>
+
+<h2>Kurser</h2>
+
+<dl class="tid">
+
+<dt class="when">06/2020</dt>
+<dd class="what">Testhuset</dd>
+<dd class="desc">Grundlæggende Struktureret Test</dd>
+
+</dl>
+
+<h2>Erhvervserfaring</h2>
+
+<dl class="tid">
+
+<dt class="when">08/2020</dt><dt>10/2020</dt>
+<dd class="what">Programmør</dd>
+<dd class="where">ZBC Slagelse</dd>
+<dd class="desc">Hjemmeside for Schmidts Radio</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>Det fulde ansvar for model laget incl dao & database.</li>
+        <li>UnitTesting</li>
+        <li>rpc interface t/ modellen.</li>
+        <li>GDPR på database niveauet, hvor de personfølsomme data altid er krypterede.</li>
+    </ul>
+    </dd>
+
+<dt class="when">09/2018</dt><dt>03/2019</dt>
+<dd class="what">Programmør / SystemAdministrator</dd>
+<dd class="where">ZBC Ringsted</dd>
+<dd class="desc">Intern hjemmeside m/ database til at holde styr på skole-praktikanternes kompetencer.</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>DataMining af Word-dokumenter og oprettelse af MySQL database på basis af denne.</li>
+        <li>Webinterface til denne database.</li>
+        <li>Administrativt interface med login for både instruktører og skolepraktikanter.</li>
+        <li>LetsEncrypt med *-domæner programmeret op mod GratisDNS.</li>
+    </ul>
+    </dd>
+
+<dt class="when" style="page-break-before: always;">08/2018</dt><dt>08/2018</dt>
+<dd class="what">Programmør / SystemAdministrator</dd>
+<dd class="where">ZBC Ringsted</dd>
+<dd class="desc">
+    Intern LAMP-server baseret på Ubuntu, hvor eleverne på grundforløb kunne boltre sig med Wordpress & MySQL.
+    Hver elev havde sin egen Wordpress instans og MySQL database.
+    Endvidere en fælles ownCloud instans.
+    </dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>bash scripting af opsætning og nedtagning af brugere</li>
+        <li>Separation af MySQL databaser og Wordpress til de enkelte brugeres hjemmebibiloteker</li>
+    </ul>
+    </dd>
+
+<dt class="when">09/2015</dt><dt>03/2016</dt>
+<dd class="what">IT-supporter</dd>
+<dd class="where">SCEU Slagelse</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">Generel support af PC & Mac i et blandet "miljø" ; opsætning & installation af PCer & Mac.</dd>
+
+<dt class="when">03/2015</dt><dt>03/2015</dt>
+<dd class="what">Projektarbejde / IT-konsulent</dd>
+<dd class="where">ASA Køreskole</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">Omlægning af IT fra Windows til Mac; opsætning og administration af medarbejdersignatur; nye aftaler om internet og telefoni.</dd>
+
+
+<dt class="when">01/2008</dt><dt>12/2008</dt>
+<dd class="what">Projektarbejde / IT-konsulent</dd>
+<dd class="where">Klubben for Avisbude i København</dd>
+<dd class="desc">Opsætning og programmering af webside helt fra bunden. Analyse af lønsituationen.</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>DataMining af Excel-regneark</li>
+        <li>Oprettelse af MySQL database på basis af dette</li>
+        <li>Internt WebInterfae til indtastning af lønoplysinger</li>
+        <li>Både offentlige og interne hjemmesider med bl.a analyser af lønsituationen i forbindelse med arbejdgivers omlægning af lønnen</li>
+    </ul>
+    </dd>
+
+<dt class="when">09/2003</dt><dt>12/2004</dt>
+<dd class="what">Hjælpelærer</dd>
+<dd class="where">Danmarks Tekniske Universitet</dd>
+<dd class="desc">Det var et kursus, hvor professoren stod for den teoretiske del; ph.d stod for undervisningen i programmering; & jeg holdt foredrag om, hvordan virkeligheden ser ud. Kurset blev afholdt på engelsk, og mange af de studerende var udenlandske.</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>IT-undervisning</li>
+        <li>Rettelse af opgaver</li>
+        <li>Holde foredrag/forelæsning</li>
+    </ul>
+    </dd>
+
+<dt class="when">08/2002</dt><dt>03/2003</dt>
+<dd class="what">Studentermedhjælp</dd>
+<dd class="where">NovoZymes i Bagsværd</dd>
+<dd class="desc">De havde få̊et sig en nyt cluster med 100 Sun blade servere, der skulle sættes op til forskning. Min opgave var at hjælpe til med dette & bl.a skrive scripts & dokumentation</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>Ubuntu server</li>
+        <li>bash scripting</li>
+        <li>Opsætning og sammenligning af MySQL og PostgreSQL</li>
+    </ul>
+    </dd>
+
+<dt class="when">01/1989</dt><dt>12/1996</dt>
+<dd class="what">Selvstændig</dd>
+<dd class="desc">Jeg havde et enkeltmandsfirma, der arbejdede med Desktop Publishing. Jeg var underleverandør til et par trykkerier & havde derudover en enkelt fast kunde. Jeg stoppede med at være aktiv, da computere blev så billige, at stort set alle trak denne type opgaver ind i firmaerne.</dd>
+<dd class="komp" style="margin-bottom: 0.5em;">
+    <ul>
+        <li>Dobbelt bogholderi</li>
+        <li>DTP</li>
+        <li>database-arbejde</li>
+        <li>elementær billedbehandling</li>
+    </ul>
+    </dd>
+
+<h2 style="page-break-before: always;">Anden erhvervserfaring</h2>
+
+<dt class="when">11/2008</dt><dt>11/2011</dt>
+<dd class="what">Postbud</dd>
+<dd class="where">Post Danmark</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">Omdeling af brevpost & pakker</dd>
+
+<dt class="when">06/1977</dt><dt>09/2008</dt>
+<dd class="what">Avisbud</dd>
+<dd class="where">BladKompagniet</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">Omdeling af morgenaviser; oplæring af nye medarbejdere; udlevering af aviser til andre bude </dd>
+
+<dt class="when">05/1970</dt><dt>05/1985</dt>
+<dd class="what">Butiksmedhjælp</dd>
+<dd class="where">Det Runde Hjørne</dd>
+<dd class="desc">Min far havde en traditionel købmandsbutik, hvor jeg allerede fra barnsben var bud, kassemedhjælper etc. Da jeg blev gammel nok, stod jeg for den fulde drift, når mine forældre holdt ferie.</dd>
+
+</dl>
+
+<h2>Tillidserhverv</h2>
+
+<dl class="tid">
+
+<dt class="when">2005</dt><dt>2008</dt>
+<dd class="where">EjerForening</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">Som bestyrelsesmedlem havde jeg den daglige kontakt til arkitekter & håndværkere under udskriftning af vinduerne</dd>
+
+<dt class="when">1992</dt><dt>1999</dt>
+<dd class="where">Domsmand og Nævning</dd>
+<dd class="desc" style="margin-bottom: 0.5em;">
+I den første 4 års periode var jeg i Østre Landsret og bl.a nævningeformand i en drabssag. I anden periode var jeg i Københavns Byret.
+</dd>
+
+<dt class="when">1987</dt><dt>1992</dt>
+<dd class="where">AndelsboligForening</dd>
+<dd class="desc">Både menigt medlem samt formand. Som formand stod jeg for en total genopretning af foreningens økonomi. Kontakt til kommune & byggefirmaer under gårdsammenlægning</dd>
+
+<h2>Sprog</h2>
+
+<dl class="persdata" style="margin-top: -0.25em; width: 100%;">
+<dt>Dansk</dt><dd>Modersmål</dd>
+<dt>Engelsk</dt><dd>Forhandlingsvant læse, skrift, tale</dd>
+<dt>Tysk</dt><dd>Moderat læse, skrift, tale</dd>
+<dt>&nbsp;</dt>
+</dl>
+
+<h2>Kørekort</h2>
+
+<dl class="persdata" style="margin-top: -0.25em;">
+<dt>B</dt><dd>Almindelig bil</dd>
+</dl>
+
+</body>
+</html>

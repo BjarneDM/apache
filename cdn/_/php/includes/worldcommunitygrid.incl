@@ -1,0 +1,78 @@
+<?php
+
+require_once( 'functions/dirList.php' ) ;
+$functionsPHP = dirList( $functionsDIR ) ;
+foreach ( $functionsPHP as $PHPfunction )
+{
+    require_once( "{$functionsDIR}/{$PHPfunction}" ) ;
+}
+
+$WCGprofile = getURL( 'https://www.worldcommunitygrid.org/stat/viewMemberInfo.do?userName=BjarneDM' ) ;
+
+$tableXML = $WCGprofile->xpath("//table") ;
+$trXML = $tableXML[3]->xpath(".//tr") ;
+$i = 0 ;
+foreach ( array_slice($trXML, 0, -1 ) as $tr )
+{
+    $tdXML = $tr->xpath(".//td/span") ;
+    $stats[$i][0]  = (string) $tdXML[0] ;
+    $stats[$i][0] .= (string) $tdXML[0]->xpath("./a")[0] ;
+    $stats[$i][0] .= (string) $tdXML[0]->xpath("./span")[0] ;
+    $stats[$i][1]  = (string) $tdXML[1] ;
+    $i++ ;
+}
+
+$trXML = array_slice($trXML, -2, 1 ) ;
+$badges = $trXML[0]->xpath(".//img") ;
+
+?>
+<table id="wcgstats">
+    <caption><iframe    src="https://www.worldcommunitygrid.org/getDynamicImage.do?memberName=BjarneDM&mnOn=true&stat=0&imageNum=1&rankOn=false&projectsOn=true&special=true" 
+                        frameborder="0" 
+                        name="di" 
+                        scrolling="no" 
+                        width="405px" 
+                        height="180px"
+                        style="border-right: 133px solid white ; border-left: 134px solid white ;"
+                >
+             </iframe></caption>
+<?php
+// print thead & tfoot m/ data fra den 1ste stat værdi
+    foreach ( ['head','foot'] as $hType )
+    { ?>
+    <t<?= $hType ?>>
+        <tr>
+            <th><?= $stats[0][0] ?></th>
+            <th><?= $stats[0][1]} ?></th>
+        </tr>
+    </thead> <?php } ?>
+    <tbody>
+    <?php
+// print resten af stat værdierne bortset fra badges
+        foreach ( array_slice($stats, 1, -1 ) as $i => $stat )
+        { ?>
+        <tr class="<?= ($i%2)?'even':'odd' ?>">
+            <td class="v"><?= $stat[0] ?></td>
+            <td class="h"><?= $stat[1] ?></td>
+        </tr> <?php }
+// print badgene
+        $stats = array_slice($stats, -1 ) ; ?>
+        <tr class="<?= (++$i%2)?'even':'odd' ?>">
+            <td class="v"><?= $stats[0][0] ?></td>
+            <td class="h">
+            <?php
+                foreach ( $badges as $badge )
+                {
+                    $project = preg_split( '/[\/_]/' , $badge['src'] ) ;
+                    echo <<<EOT
+<a href="https://www.worldcommunitygrid.org/stat/viewProject.do?projectShortName={$project[3]}">
+<img
+    src="https://www.worldcommunitygrid.org{$badge['src']}"
+    title="{$badge['title']}"
+></a>
+EOT;
+                }
+            ?></td>
+        </tr>
+    </tbody>
+</table>

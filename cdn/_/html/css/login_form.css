@@ -1,0 +1,38 @@
+div#besked
+{
+    color: red ;
+    text-align: center ;
+}
+
+div#loginDIV
+{
+    width: 50% ;
+    margin: 0px auto 0px auto ;
+    border: 0.5em solid white ;
+    border-radius: 2em ;
+    padding: 2em ;
+    text-align: center ;
+}
+
+div.form_field
+{
+    clear: both ;
+    padding: 0.5em 0px 0.5em 0px ;
+}
+
+div.form_field label
+{
+    display: block ;
+    float: left ;
+    width : 25% ;
+    text-align: right ;
+    margin-right: 0.5em ;
+}
+
+div.form_field input
+{
+    display: block ;
+    float: left ;
+    width : 50% ;
+    text-align: center ;
+}

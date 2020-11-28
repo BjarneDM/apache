@@ -1,0 +1,20 @@
+<a href="https://foldingathome.org/">
+<?php 
+
+$baseURL = explode( ':' , get_include_path() ) ;
+$baseURL = dirname( end( $baseURL ) ) . '/html/graphics' ;
+
+$types = [ 'wus' , 'score' ] ;
+$stats =  [] ;
+foreach ( $types as $type )
+    $stats[ $type ] = stat( $baseURL . "/FoldingAtHome-{$type}-certificate-107558123.jpg" ) ;
+
+if ( $stats[ $types[0] ]['size'] == $stats[ $types[1] ]['size'] )
+{
+    echo "<img src='/graphics/FoldingAtHome-{$types[1]}-certificate-107558123.jpg'>" . PHP_EOL ;
+} else {
+    echo "<img src='/graphics/FoldingAtHome-{$types[0]}-certificate-107558123.jpg' style='width: 25em;'>" . PHP_EOL ;
+    echo "<img src='/graphics/FoldingAtHome-{$types[1]}-certificate-107558123.jpg' style='width: 25em;'>" . PHP_EOL ;
+}
+?>
+</a>

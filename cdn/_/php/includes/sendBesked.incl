@@ -1,0 +1,37 @@
+<?php 
+
+$dom = new DOMDocument('1.0','utf-8') ;
+$dom->preserveWhiteSpace = false ;
+$root = $dom->documentElement ;
+$node = $dom->createElement('resultat') ;                   // node = resultat
+$rootnode = $dom->appendChild($node) ;                      // rootnode = resultat
+$node = $dom->createElement('antal') ;                      // node = antal
+$rootnode->appendChild($node) ;                             // <resultat><antal></antal></resultat>
+
+function sendBesked( $type , $besked='' , $antal=-1 )
+{ global $dom , $rootnode ;
+    $rootnode->setAttribute('type',$type) ;                 // <resultat type="$type"><antal></antal></resultat>
+    $node = $dom->createElement('besked') ;                 // node = besked
+    $nodeText = $dom->createTextNode($besked) ;
+    $node->appendChild($nodeText) ;                         // <besked>$besked</besked>
+    $rootnode->appendChild($node) ;                         // <resultat type="$type"><antal></antal><besked>$besked</besked></resultat>
+//     $antallet = $dom->getElementsByTagName('antal')[0]->textContent  ;
+//     $antallet->replaceData(1,999,$antal) ;                  // <resultat type="$type"><antal>$antal</antal><besked>$besked</besked></resultat>
+    $dom->getElementsByTagName('antal')[0]->textContent = $antal ;
+}
+
+// $beskeden = $dom->getElementsByTagName('besked')[0] ;
+// $beskeden->appendData($besked) ;
+
+/*
+$xml = <<<XML
+<resultat type="{$type}">
+    <besked>{$besked}</besked>
+    <antal>{$antal}</antal>
+</resultat>
+XML;
+    $fragment = $dom->createDocumentFragment() ;
+    $fragment->appendXML( $xml ) ;
+    $dom->appendChild( $fragment ) ;
+ */
+?>

@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="/css/login_form.css">
+
+<script src="/javascripts/prototype.js"></script>
+<script src="/javascripts/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script>jq = jQuery.noConflict() ;</script>
+<script src="/javascripts/loginout/login.js" type="text/javascript" charset="utf-8"></script>
+
+<h1>Login Form</h1>
+
+
+<div id="loginDIV">
+<div id="besked" style="display: none;"></div>
+<form method="post" action="" onsubmit="login(); return false;" id="loginForm">
+    <div class="form_field">
+      <label for="loginID">login :</label>
+      <input type="text"  name="loginID" id="loginID">
+    </div>
+    <div class="form_field">
+      <label for="password">password :</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <br style="clear: both ;">
+    <input name="submit" id="submit" type="submit" value="login">
+    <input name="nulstil" id="nulstil" type="reset" value="nulstil">
+</form>
+</div>

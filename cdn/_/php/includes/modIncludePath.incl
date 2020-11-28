@@ -1,0 +1,9 @@
+<?php
+
+$includePaths[] = str_replace( '/cdn/' , "/{$_SERVER['sub_domain']}/" , get_include_path() ) ;
+$includePaths[] = '.' ;
+$includePaths[] = get_include_path() ;
+
+set_include_path( implode( ':' , $includePaths ) ) ;
+
+?>

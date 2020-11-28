@@ -1,0 +1,31 @@
+<?php 
+require_once( 'includes/setSessionStart.incl' ) ;
+
+/*  modgå session-hijacking
+ *  isset( $_SESSION['ipnummer'] )
+ *      tjek for om der er logget ind & der er registreret et ipnummer
+ *  $_SESSION['ipnummer'] !== $_SERVER['REMOTE_ADDR']
+ *      tjek for om ipnummeret ændrer sig fra det oprindelige login
+ */
+if ( ! isset( $_SESSION['ipnummer'] )  || $_SESSION['ipnummer'] !== $_SERVER['REMOTE_ADDR'] ) include_once( 'includes/killsession.incl' ) ;
+ 
+/*
+ *  noget svarende til dette :
+ *      SetEnvIf Host "(.*)\.domain\.tld" sub_domain=$1
+ *  skal være i din httpd.conf for at det følgende kan virke
+ */
+/*  modgå URL hacking
+ *  isset( $_SESSION['subdomain'] ) : 
+ *      tjek for om der er logget ind
+ *  $_SESSION['subdomain'] !== $_SERVER['sub_domain'] 
+ *      tjek for at man tilgår en fil under et subdæme man har adgang til
+ */
+if ( ! isset( $_SESSION['subdomain'] ) || $_SESSION['subdomain'] !== $_SERVER['sub_domain'] ) include_once( 'includes/killsession.incl' ) ;
+
+function skrubAf ()
+{
+    header('Location: http://<?= $_SERVER['HTTP_HOST'] ?>/') ;
+    exit ;
+}
+
+?>

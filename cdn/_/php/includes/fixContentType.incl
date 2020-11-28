@@ -1,0 +1,28 @@
+<?php
+/*
+ *  du skal have disse linier i din httpd.conf
+
+    <IfModule php7_module>
+        AddType  application/x-httpd-php    .js .css
+    </IfModule>
+    php_value auto_prepend_file 'includes/fixContentType.incl'
+
+ *  det gør det muligt at lave "sjove" ting m/ .css & .js filer,
+ *  såsom at :
+ *      modificere dem alt efter context
+ *      adgangskontrol
+ */
+$fileType = array_pop( preg_split( '/\./' , $_SERVER['PHP_SELF'] ) ) ;
+
+switch ( $fileType )
+{
+    case 'js' :
+        header("Content-type: text/javascript;charset=utf-8") ;
+        break ;
+    case 'css' :
+        header("Content-type: text/css;charset=utf-8") ;
+        break ;
+
+}
+
+?>

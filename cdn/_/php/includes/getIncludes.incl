@@ -1,0 +1,36 @@
+<?php 
+/*
+ *  +------------------+
+ *  | !!! ADVARSEL !!! |
+ *  +------------------+
+ *
+ *  denne fil kan !!!IKKE!!! inkluderes sådan som den er,
+ *  idet den er afhængig af, hvor i fil-systemet man er.
+ *
+ *  dette er derfor at betragte som en template,
+ *  som skal sættes ind i "master"-filer
+ */
+
+/* template : includes/getIncludes.incl */
+require_once( 'functions/dirList.php' ) ;
+$referer = explode( '.' , $_SERVER['SERVER_NAME'] ) ;
+$IncludePaths = explode( ':' , get_include_path() );
+
+$mappe  = explode( '.' , basename(__FILE__) )[0] ;
+$hvor   = [] ;
+$hvor[] = dirname(__file__) ;
+$hvor[] = dirname( dirname( $IncludePaths[0] ) ) . '/' . $referer[0] . '/html' ;
+$hvor[] = dirname( dirname( $IncludePaths[0] ) ) . '/' . $referer[0] . '/html/' . $_SESSION['subdomain'] ;
+
+foreach ( $hvor as $theDir )
+{
+    $info  = dirList( "{$theDir}/{$mappe}" , '\.incl$') ;
+    foreach( $info as $infoFile ) { $toInclude[$infoFile] = $theDir ; }
+} unset( $theDir ) ;
+ksort( $toInclude ) ;
+
+$thePara = 0 ;
+foreach( $toInclude as $theInclude => $theDir ) { include "{$theDir}/{$mappe}/{$theInclude}" ; }
+/* end template */
+
+?>

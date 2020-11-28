@@ -1,0 +1,9 @@
+<?php
+
+session_start
+    ( [
+        "name" => $_SERVER['sub_domain']."ID" ,
+        "cookie_domain" => $_SERVER['SERVER_NAME']
+    ] ) ;
+
+?>
